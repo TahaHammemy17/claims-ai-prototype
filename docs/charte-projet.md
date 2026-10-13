@@ -1,6 +1,6 @@
 # Charte projet : instruction assistée des remboursements santé
 
-**Version :** 1.0 · **Date :** 10/2026 · **Chef de projet MOA :** Taha Hammami
+**Version :** 1.0 · **Chef de projet MOA :** Taha HAMMAMI
 
 ## 1. Contexte
 Les gestionnaires de prestations d'une complémentaire santé lisent chaque
@@ -35,17 +35,15 @@ prestations (utilisateurs), DSI (MOE), juriste / DPO (RGPD, IA), chef de
 projet MOA.
 
 ## 7. Contraintes
-Environ 3 semaines, budget AWS plafonné avec alerte, données uniquement
-synthétiques.
+Temps limité, budget AWS plafonné avec alerte, données uniquement synthétiques.
 
 ## 8. Risques principaux
-| Risque | Mesure |
-|---|---|
-| L'IA se trompe sur un champ | Validation humaine, mesure du taux d'erreur |
-| Documents synthétiques trop faciles | Varier mises en page, qualité, cas pièges |
-| Dérive du périmètre | Respect de la liste « hors périmètre » |
-| Coûts AWS imprévus | Budget avec alerte e-mail, petits volumes |
-| Mauvaise compréhension du métier | Relecture par un professionnel de l'assurance |
+| Risque : Mesure |
+| L'IA se trompe sur un champ : Validation humaine, mesure du taux d'erreur |
+| Documents synthétiques trop faciles : Varier mises en page, qualité, cas pièges |
+| Dérive du périmètre : Respect de la liste « hors périmètre » |
+| Coûts AWS imprévus : Budget avec alerte e-mail, petits volumes |
+| Mauvaise compréhension du métier : Relecture par un professionnel de l'assurance |
 
 ## 9. Livrables
 Charte, glossaire, carte du circuit, backlog, jeux de test, code, évaluation
