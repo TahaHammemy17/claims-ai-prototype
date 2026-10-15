@@ -1,6 +1,6 @@
 import { readFileSync } from 'fs';
 import { basename } from 'path';
-import { LocalPdfExtractor } from './extraction';
+import { LocalPdfExtractor, classifyDocument, isEligibleForRefund } from './extraction';
 
 async function main() {
   const file = process.argv[2];
@@ -8,8 +8,16 @@ async function main() {
     console.error('Usage : npm run extract -- samples/TC-03_decompte_RO.pdf');
     process.exit(1);
   }
-  const result = await new LocalPdfExtractor().extract(readFileSync(file), basename(file));
-  console.log(JSON.stringify(result, null, 2));
+  const buffer = readFileSync(file);
+  const documentType = await classifyDocument(buffer);
+  const extraction = await new LocalPdfExtractor().extract(buffer, basename(file));
+  console.log(
+    JSON.stringify(
+      { documentType, eligibleAuRemboursement: isEligibleForRefund(documentType), ...extraction },
+      null,
+      2,
+    ),
+  );
 }
 
 main().catch((e) => {
