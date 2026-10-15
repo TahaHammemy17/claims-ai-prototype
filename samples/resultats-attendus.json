@@ -1,0 +1,193 @@
+[
+  {
+    "id": "TC-01",
+    "fichiers": [
+      "TC-01_facture_optique.pdf"
+    ],
+    "date_depot": "2026-03-15",
+    "type_document": "facture",
+    "extraction": {
+      "beneficiaire": "Léa BERNARD",
+      "date_soins": "2026-03-12",
+      "type_acte": "optique 100 % Sante",
+      "montant_facture": 180.0
+    },
+    "alertes": [],
+    "regles": []
+  },
+  {
+    "id": "TC-02",
+    "fichiers": [
+      "TC-02_devis_dentaire.pdf"
+    ],
+    "date_depot": "2026-04-03",
+    "type_document": "devis",
+    "extraction": {
+      "beneficiaire": "Hugo BERNARD",
+      "date_soins": "2026-04-02",
+      "type_acte": "couronne ceramique",
+      "montant_facture": 650.0
+    },
+    "alertes": [],
+    "regles": [
+      "RG-05"
+    ],
+    "remarque": "Un devis n'entre pas dans le calcul de remboursement."
+  },
+  {
+    "id": "TC-03",
+    "fichiers": [
+      "TC-03_facture_specialiste.pdf",
+      "TC-03_decompte_RO.pdf"
+    ],
+    "date_depot": "2026-05-20",
+    "type_document": "facture + decompte RO",
+    "extraction": {
+      "beneficiaire": "Léa BERNARD",
+      "date_soins": "2026-05-18",
+      "type_acte": "consultation specialiste",
+      "montant_facture": 80.0,
+      "base_remboursement": 30.0,
+      "taux_RO": 70,
+      "montant_RO": 21.0
+    },
+    "calcul": {
+      "plafond_total": 45.0,
+      "montant_RC": 24.0,
+      "reste_a_charge": 35.0
+    },
+    "alertes": [],
+    "regles": [
+      "RG-01"
+    ]
+  },
+  {
+    "id": "TC-04",
+    "fichiers": [
+      "TC-04_decompte_RO_partiel.pdf"
+    ],
+    "date_depot": "2026-06-11",
+    "type_document": "decompte RO",
+    "extraction": {
+      "beneficiaire": "Hugo BERNARD",
+      "date_soins": "2026-06-09",
+      "type_acte": "kinesitherapie",
+      "base_remboursement": 20.0,
+      "taux_RO": 60,
+      "montant_RO": 12.0
+    },
+    "alertes": [],
+    "regles": []
+  },
+  {
+    "id": "TC-05",
+    "fichiers": [
+      "TC-05_document_illisible.png"
+    ],
+    "date_depot": "2026-06-22",
+    "type_document": "illisible",
+    "extraction": null,
+    "alertes": [
+      "ILLISIBLE"
+    ],
+    "regles": [],
+    "remarque": "Aucune extraction automatique ; traitement manuel."
+  },
+  {
+    "id": "TC-06",
+    "fichiers": [
+      "TC-06_facture.pdf",
+      "TC-06_decompte_RO.pdf"
+    ],
+    "date_depot": "2026-06-22",
+    "type_document": "facture + decompte RO",
+    "extraction": {
+      "beneficiaire": "Léa BERNARD",
+      "date_soins": "2026-06-20",
+      "montant_facture": 50.0,
+      "montant_RO": 70.0
+    },
+    "alertes": [
+      "INCOHERENCE_MONTANT"
+    ],
+    "regles": [
+      "RG-01"
+    ],
+    "remarque": "Le montant rembourse depasse le montant facture."
+  },
+  {
+    "id": "TC-07",
+    "fichiers": [
+      "TC-07_doublon_facture_optique.pdf"
+    ],
+    "date_depot": "2026-03-18",
+    "type_document": "facture",
+    "extraction": {
+      "beneficiaire": "Léa BERNARD",
+      "date_soins": "2026-03-12",
+      "montant_facture": 180.0,
+      "numero_facture": "FA-2026-0412"
+    },
+    "alertes": [
+      "DOUBLON"
+    ],
+    "regles": [
+      "RG-02"
+    ],
+    "doublon_de": "TC-01"
+  },
+  {
+    "id": "TC-08",
+    "fichiers": [
+      "TC-08_facture_date_future.pdf"
+    ],
+    "date_depot": "2026-10-05",
+    "type_document": "facture",
+    "extraction": {
+      "beneficiaire": "Léa BERNARD",
+      "date_soins": "2026-12-15",
+      "montant_facture": 60.0
+    },
+    "alertes": [
+      "DATE_INCOHERENTE"
+    ],
+    "regles": [
+      "RG-03"
+    ],
+    "remarque": "Date de soins posterieure a la date de depot."
+  },
+  {
+    "id": "TC-09",
+    "fichiers": [
+      "TC-09_facture_beneficiaire_inconnu.pdf"
+    ],
+    "date_depot": "2026-06-27",
+    "type_document": "facture",
+    "extraction": {
+      "beneficiaire": "Paul LEROY",
+      "date_soins": "2026-06-25",
+      "montant_facture": 45.0
+    },
+    "alertes": [
+      "BENEFICIAIRE_INCONNU"
+    ],
+    "regles": [
+      "RG-04"
+    ],
+    "remarque": "Beneficiaire absent du contrat fictif."
+  },
+  {
+    "id": "TC-10",
+    "fichiers": [
+      "TC-10_hors_sujet.pdf"
+    ],
+    "date_depot": "2026-06-28",
+    "type_document": "non reconnu",
+    "extraction": null,
+    "alertes": [],
+    "regles": [
+      "RG-05"
+    ],
+    "remarque": "Ni facture, ni decompte, ni devis."
+  }
+]

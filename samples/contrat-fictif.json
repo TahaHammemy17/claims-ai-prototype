@@ -1,0 +1,10 @@
+{
+  "contrat_id": "CONTRAT-FICTIF-0001",
+  "avertissement": "Donnees synthetiques",
+  "beneficiaires": [
+    "Léa BERNARD",
+    "Hugo BERNARD"
+  ],
+  "garantie_consultation_specialiste_pct_BR": 150,
+  "garantie_optique_100_sante": "reste a charge zero"
+}
