@@ -27,6 +27,9 @@ describe('Fonctions de lecture', () => {
     expect(parseAmount('1 234,50 €')).toBe(1234.5);
     expect(parseAmount('abc')).toBeNull();
   });
+   it('lit un montant avec centimes (12,50 €)', () => {
+    expect(parseAmount('12,50 €')).toBe(12.5);
+  });
   it('lit les dates JJ/MM/AAAA', () => {
     expect(parseDate('12/03/2026')).toBe('2026-03-12');
     expect(parseDate('pas une date')).toBeNull();
