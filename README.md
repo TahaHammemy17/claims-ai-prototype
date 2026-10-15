@@ -18,3 +18,7 @@ Sprint 0 : cadrage en cours (charte, glossaire, risques, cas de test).
 
 ## Avertissement
 Aucune donnée réelle de santé. Ne jamais publier de clés AWS ni de données personnelles dans ce dépôt.
+
+## Statut
+Sprint 1 en cours : documents synthétiques (US-01) et extraction de champs (US-02) terminés.
+Suivi réel dans Jira (accès sur demande).
