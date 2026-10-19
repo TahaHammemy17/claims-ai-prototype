@@ -10,6 +10,7 @@
   "devDependencies": {
     "@types/jest": "^30.0.0",
     "@types/node": "^26.6.5",
+    "@types/pngjs": "^6.0.5",
     "cross-env": "^10.1.0",
     "jest": "^30.5.2",
     "ts-jest": "^29.4.14",
@@ -17,6 +18,7 @@
     "typescript": "^5.6.3"
   },
   "dependencies": {
-    "pdf-parse": "^2.4.5"
+    "pdf-parse": "^2.4.5",
+    "pngjs": "^7.0.0"
   }
 }
