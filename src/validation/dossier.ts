@@ -1,4 +1,4 @@
-import { DocumentType, FieldName } from '../extraction';
+import { DocumentExtractor, DocumentType, FieldName } from '../extraction';
 import { DossierValues, mergeExtractions } from '../dossier';
 import { processDocument } from '../pipeline';
 import { controlerPlafond, PlafondCalcul } from '../controls/plafond';
@@ -47,14 +47,16 @@ export async function construireDossier(params: {
   dateDepot: string;
   garantiePct: number;
   registre: DossierRegistry;
+  /** Extracteur à utiliser (règles par défaut). */
+  extracteur?: DocumentExtractor;
 }): Promise<DossierAValider> {
-  const { reference, fichiers, dateDepot, garantiePct, registre } = params;
+  const { reference, fichiers, dateDepot, garantiePct, registre, extracteur } = params;
   const alertes: Alerte[] = [];
   const documents: DossierAValider['documents'] = [];
   const extractions = [];
 
   for (const f of fichiers) {
-    const r = await processDocument(f.contenu, f.nom);
+    const r = await processDocument(f.contenu, f.nom, extracteur);
     documents.push({ fichier: f.nom, type: r.documentType });
     for (const code of r.alerts) alertes.push(alerte(code));
     if (r.alerts.length === 0 && r.documentType === 'non_reconnu') alertes.push(alerte('NON_RECONNU'));

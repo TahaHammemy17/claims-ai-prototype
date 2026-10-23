@@ -34,3 +34,14 @@ commune (ADR-001), sélectionnable par configuration, sans exposer de clé dans 
   pipeline (la classification d'une image n'existe pas sans texte).
 - La réponse d'un modèle varie : la qualité réelle sera mesurée à US-10.
 - Les prix et l'accès aux modèles peuvent changer avec le plan AWS.
+
+## Mise à jour après le premier essai réel (Nova Lite, Stockholm)
+- TC-01 (facture) : 4 champs corrects sur 4, recoupement des lignes validé.
+- TC-03 (décompte) : le modèle a pris la base de remboursement (30 €) pour le montant facturé.
+  Avec un décompte lu avant la facture, le calcul du plafond aurait été faussé en silence.
+  **Correction :** le type du document est décidé par le code ; les champs qui n'existent pas dans ce
+  type sont écartés (facture : pas de champs de décompte ; décompte : pas de montant facturé).
+- TC-10 (menu) : aucune valeur inventée, mais 539 tokens consommés pour rien.
+  **Correction :** un document non reconnu n'est plus envoyé au modèle.
+- Leçon : un faux modèle de test ne reproduit que les erreurs qu'on a imaginées ; seul l'essai réel a
+  révélé celle-ci. Les nouveaux tests reproduisent désormais ces erreurs réelles.
