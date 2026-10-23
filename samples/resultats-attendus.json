@@ -105,7 +105,9 @@
       "beneficiaire": "Léa BERNARD",
       "date_soins": "2026-06-20",
       "montant_facture": 50.0,
-      "montant_RO": 70.0
+      "montant_RO": 70.0,
+      "base_remboursement": 100.0,
+      "taux_RO": 70
     },
     "alertes": [
       "INCOHERENCE_MONTANT"

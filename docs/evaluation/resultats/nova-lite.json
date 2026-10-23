@@ -1,0 +1,592 @@
+{
+  "nom": "Nova Lite",
+  "extracteur": "BedrockExtractor",
+  "nombreDeCas": 10,
+  "champs": [
+    {
+      "cas": "TC-01",
+      "champ": "beneficiaire",
+      "attendu": "Léa BERNARD",
+      "obtenu": "Léa BERNARD",
+      "verdict": "correct"
+    },
+    {
+      "cas": "TC-01",
+      "champ": "date_soins",
+      "attendu": "2026-03-12",
+      "obtenu": "2026-03-12",
+      "verdict": "correct"
+    },
+    {
+      "cas": "TC-01",
+      "champ": "montant_facture",
+      "attendu": 180,
+      "obtenu": 180,
+      "verdict": "correct"
+    },
+    {
+      "cas": "TC-01",
+      "champ": "base_remboursement",
+      "attendu": null,
+      "obtenu": null,
+      "verdict": "absence_correcte"
+    },
+    {
+      "cas": "TC-01",
+      "champ": "taux_RO",
+      "attendu": null,
+      "obtenu": null,
+      "verdict": "absence_correcte"
+    },
+    {
+      "cas": "TC-01",
+      "champ": "montant_RO",
+      "attendu": null,
+      "obtenu": null,
+      "verdict": "absence_correcte"
+    },
+    {
+      "cas": "TC-02",
+      "champ": "beneficiaire",
+      "attendu": "Hugo BERNARD",
+      "obtenu": "Hugo BERNARD",
+      "verdict": "correct"
+    },
+    {
+      "cas": "TC-02",
+      "champ": "date_soins",
+      "attendu": "2026-04-02",
+      "obtenu": "2026-04-02",
+      "verdict": "correct"
+    },
+    {
+      "cas": "TC-02",
+      "champ": "montant_facture",
+      "attendu": 650,
+      "obtenu": 650,
+      "verdict": "correct"
+    },
+    {
+      "cas": "TC-02",
+      "champ": "base_remboursement",
+      "attendu": null,
+      "obtenu": null,
+      "verdict": "absence_correcte"
+    },
+    {
+      "cas": "TC-02",
+      "champ": "taux_RO",
+      "attendu": null,
+      "obtenu": null,
+      "verdict": "absence_correcte"
+    },
+    {
+      "cas": "TC-02",
+      "champ": "montant_RO",
+      "attendu": null,
+      "obtenu": null,
+      "verdict": "absence_correcte"
+    },
+    {
+      "cas": "TC-03",
+      "champ": "beneficiaire",
+      "attendu": "Léa BERNARD",
+      "obtenu": "Léa BERNARD",
+      "verdict": "correct"
+    },
+    {
+      "cas": "TC-03",
+      "champ": "date_soins",
+      "attendu": "2026-05-18",
+      "obtenu": "2026-05-18",
+      "verdict": "correct"
+    },
+    {
+      "cas": "TC-03",
+      "champ": "montant_facture",
+      "attendu": 80,
+      "obtenu": 80,
+      "verdict": "correct"
+    },
+    {
+      "cas": "TC-03",
+      "champ": "base_remboursement",
+      "attendu": 30,
+      "obtenu": 30,
+      "verdict": "correct"
+    },
+    {
+      "cas": "TC-03",
+      "champ": "taux_RO",
+      "attendu": 70,
+      "obtenu": 70,
+      "verdict": "correct"
+    },
+    {
+      "cas": "TC-03",
+      "champ": "montant_RO",
+      "attendu": 21,
+      "obtenu": 21,
+      "verdict": "correct"
+    },
+    {
+      "cas": "TC-04",
+      "champ": "beneficiaire",
+      "attendu": "Hugo BERNARD",
+      "obtenu": "Hugo BERNARD",
+      "verdict": "correct"
+    },
+    {
+      "cas": "TC-04",
+      "champ": "date_soins",
+      "attendu": "2026-06-09",
+      "obtenu": "2026-06-09",
+      "verdict": "correct"
+    },
+    {
+      "cas": "TC-04",
+      "champ": "montant_facture",
+      "attendu": null,
+      "obtenu": null,
+      "verdict": "absence_correcte"
+    },
+    {
+      "cas": "TC-04",
+      "champ": "base_remboursement",
+      "attendu": 20,
+      "obtenu": 20,
+      "verdict": "correct"
+    },
+    {
+      "cas": "TC-04",
+      "champ": "taux_RO",
+      "attendu": 60,
+      "obtenu": 60,
+      "verdict": "correct"
+    },
+    {
+      "cas": "TC-04",
+      "champ": "montant_RO",
+      "attendu": 12,
+      "obtenu": 12,
+      "verdict": "correct"
+    },
+    {
+      "cas": "TC-05",
+      "champ": "beneficiaire",
+      "attendu": null,
+      "obtenu": null,
+      "verdict": "absence_correcte"
+    },
+    {
+      "cas": "TC-05",
+      "champ": "date_soins",
+      "attendu": null,
+      "obtenu": null,
+      "verdict": "absence_correcte"
+    },
+    {
+      "cas": "TC-05",
+      "champ": "montant_facture",
+      "attendu": null,
+      "obtenu": null,
+      "verdict": "absence_correcte"
+    },
+    {
+      "cas": "TC-05",
+      "champ": "base_remboursement",
+      "attendu": null,
+      "obtenu": null,
+      "verdict": "absence_correcte"
+    },
+    {
+      "cas": "TC-05",
+      "champ": "taux_RO",
+      "attendu": null,
+      "obtenu": null,
+      "verdict": "absence_correcte"
+    },
+    {
+      "cas": "TC-05",
+      "champ": "montant_RO",
+      "attendu": null,
+      "obtenu": null,
+      "verdict": "absence_correcte"
+    },
+    {
+      "cas": "TC-06",
+      "champ": "beneficiaire",
+      "attendu": "Léa BERNARD",
+      "obtenu": "Léa BERNARD",
+      "verdict": "correct"
+    },
+    {
+      "cas": "TC-06",
+      "champ": "date_soins",
+      "attendu": "2026-06-20",
+      "obtenu": "2026-06-20",
+      "verdict": "correct"
+    },
+    {
+      "cas": "TC-06",
+      "champ": "montant_facture",
+      "attendu": 50,
+      "obtenu": 50,
+      "verdict": "correct"
+    },
+    {
+      "cas": "TC-06",
+      "champ": "base_remboursement",
+      "attendu": 100,
+      "obtenu": 100,
+      "verdict": "correct"
+    },
+    {
+      "cas": "TC-06",
+      "champ": "taux_RO",
+      "attendu": 70,
+      "obtenu": 70,
+      "verdict": "correct"
+    },
+    {
+      "cas": "TC-06",
+      "champ": "montant_RO",
+      "attendu": 70,
+      "obtenu": 70,
+      "verdict": "correct"
+    },
+    {
+      "cas": "TC-07",
+      "champ": "beneficiaire",
+      "attendu": "Léa BERNARD",
+      "obtenu": "Léa BERNARD",
+      "verdict": "correct"
+    },
+    {
+      "cas": "TC-07",
+      "champ": "date_soins",
+      "attendu": "2026-03-12",
+      "obtenu": "2026-03-12",
+      "verdict": "correct"
+    },
+    {
+      "cas": "TC-07",
+      "champ": "montant_facture",
+      "attendu": 180,
+      "obtenu": 180,
+      "verdict": "correct"
+    },
+    {
+      "cas": "TC-07",
+      "champ": "base_remboursement",
+      "attendu": null,
+      "obtenu": null,
+      "verdict": "absence_correcte"
+    },
+    {
+      "cas": "TC-07",
+      "champ": "taux_RO",
+      "attendu": null,
+      "obtenu": null,
+      "verdict": "absence_correcte"
+    },
+    {
+      "cas": "TC-07",
+      "champ": "montant_RO",
+      "attendu": null,
+      "obtenu": null,
+      "verdict": "absence_correcte"
+    },
+    {
+      "cas": "TC-08",
+      "champ": "beneficiaire",
+      "attendu": "Léa BERNARD",
+      "obtenu": "Léa BERNARD",
+      "verdict": "correct"
+    },
+    {
+      "cas": "TC-08",
+      "champ": "date_soins",
+      "attendu": "2026-12-15",
+      "obtenu": "2026-12-15",
+      "verdict": "correct"
+    },
+    {
+      "cas": "TC-08",
+      "champ": "montant_facture",
+      "attendu": 60,
+      "obtenu": 60,
+      "verdict": "correct"
+    },
+    {
+      "cas": "TC-08",
+      "champ": "base_remboursement",
+      "attendu": null,
+      "obtenu": null,
+      "verdict": "absence_correcte"
+    },
+    {
+      "cas": "TC-08",
+      "champ": "taux_RO",
+      "attendu": null,
+      "obtenu": null,
+      "verdict": "absence_correcte"
+    },
+    {
+      "cas": "TC-08",
+      "champ": "montant_RO",
+      "attendu": null,
+      "obtenu": null,
+      "verdict": "absence_correcte"
+    },
+    {
+      "cas": "TC-09",
+      "champ": "beneficiaire",
+      "attendu": "Paul LEROY",
+      "obtenu": "Paul LEROY",
+      "verdict": "correct"
+    },
+    {
+      "cas": "TC-09",
+      "champ": "date_soins",
+      "attendu": "2026-06-25",
+      "obtenu": "2026-06-25",
+      "verdict": "correct"
+    },
+    {
+      "cas": "TC-09",
+      "champ": "montant_facture",
+      "attendu": 45,
+      "obtenu": 45,
+      "verdict": "correct"
+    },
+    {
+      "cas": "TC-09",
+      "champ": "base_remboursement",
+      "attendu": null,
+      "obtenu": null,
+      "verdict": "absence_correcte"
+    },
+    {
+      "cas": "TC-09",
+      "champ": "taux_RO",
+      "attendu": null,
+      "obtenu": null,
+      "verdict": "absence_correcte"
+    },
+    {
+      "cas": "TC-09",
+      "champ": "montant_RO",
+      "attendu": null,
+      "obtenu": null,
+      "verdict": "absence_correcte"
+    },
+    {
+      "cas": "TC-10",
+      "champ": "beneficiaire",
+      "attendu": null,
+      "obtenu": null,
+      "verdict": "absence_correcte"
+    },
+    {
+      "cas": "TC-10",
+      "champ": "date_soins",
+      "attendu": null,
+      "obtenu": null,
+      "verdict": "absence_correcte"
+    },
+    {
+      "cas": "TC-10",
+      "champ": "montant_facture",
+      "attendu": null,
+      "obtenu": null,
+      "verdict": "absence_correcte"
+    },
+    {
+      "cas": "TC-10",
+      "champ": "base_remboursement",
+      "attendu": null,
+      "obtenu": null,
+      "verdict": "absence_correcte"
+    },
+    {
+      "cas": "TC-10",
+      "champ": "taux_RO",
+      "attendu": null,
+      "obtenu": null,
+      "verdict": "absence_correcte"
+    },
+    {
+      "cas": "TC-10",
+      "champ": "montant_RO",
+      "attendu": null,
+      "obtenu": null,
+      "verdict": "absence_correcte"
+    }
+  ],
+  "alertes": [
+    {
+      "cas": "TC-01",
+      "attendues": [],
+      "detectees": [],
+      "manquees": [],
+      "fausses": []
+    },
+    {
+      "cas": "TC-02",
+      "attendues": [],
+      "detectees": [],
+      "manquees": [],
+      "fausses": []
+    },
+    {
+      "cas": "TC-03",
+      "attendues": [],
+      "detectees": [],
+      "manquees": [],
+      "fausses": []
+    },
+    {
+      "cas": "TC-04",
+      "attendues": [],
+      "detectees": [],
+      "manquees": [],
+      "fausses": []
+    },
+    {
+      "cas": "TC-05",
+      "attendues": [
+        "ILLISIBLE"
+      ],
+      "detectees": [
+        "ILLISIBLE"
+      ],
+      "manquees": [],
+      "fausses": []
+    },
+    {
+      "cas": "TC-06",
+      "attendues": [
+        "INCOHERENCE_MONTANT"
+      ],
+      "detectees": [
+        "INCOHERENCE_MONTANT"
+      ],
+      "manquees": [],
+      "fausses": []
+    },
+    {
+      "cas": "TC-07",
+      "attendues": [
+        "DOUBLON"
+      ],
+      "detectees": [
+        "DOUBLON"
+      ],
+      "manquees": [],
+      "fausses": []
+    },
+    {
+      "cas": "TC-08",
+      "attendues": [
+        "DATE_INCOHERENTE"
+      ],
+      "detectees": [
+        "DATE_INCOHERENTE"
+      ],
+      "manquees": [],
+      "fausses": []
+    },
+    {
+      "cas": "TC-09",
+      "attendues": [
+        "BENEFICIAIRE_INCONNU"
+      ],
+      "detectees": [],
+      "manquees": [
+        "BENEFICIAIRE_INCONNU"
+      ],
+      "fausses": []
+    },
+    {
+      "cas": "TC-10",
+      "attendues": [],
+      "detectees": [],
+      "manquees": [],
+      "fausses": []
+    }
+  ],
+  "consommation": {
+    "appels": 10,
+    "inputTokens": 5129,
+    "outputTokens": 1166
+  },
+  "synthese": {
+    "parChamp": {
+      "beneficiaire": {
+        "correct": 8,
+        "manquant": 0,
+        "faux": 0,
+        "absence_correcte": 2,
+        "exactitude": 1
+      },
+      "date_soins": {
+        "correct": 8,
+        "manquant": 0,
+        "faux": 0,
+        "absence_correcte": 2,
+        "exactitude": 1
+      },
+      "montant_facture": {
+        "correct": 7,
+        "manquant": 0,
+        "faux": 0,
+        "absence_correcte": 3,
+        "exactitude": 1
+      },
+      "base_remboursement": {
+        "correct": 3,
+        "manquant": 0,
+        "faux": 0,
+        "absence_correcte": 7,
+        "exactitude": 1
+      },
+      "taux_RO": {
+        "correct": 3,
+        "manquant": 0,
+        "faux": 0,
+        "absence_correcte": 7,
+        "exactitude": 1
+      },
+      "montant_RO": {
+        "correct": 3,
+        "manquant": 0,
+        "faux": 0,
+        "absence_correcte": 7,
+        "exactitude": 1
+      }
+    },
+    "global": {
+      "correct": 32,
+      "manquant": 0,
+      "faux": 0,
+      "absence_correcte": 28,
+      "exactitude": 1
+    },
+    "lecture": {
+      "attendues": 32,
+      "justes": 32,
+      "taux": 1
+    },
+    "inventees": 0,
+    "alertes": {
+      "attendues": 5,
+      "detectees": 4,
+      "taux": 0.8,
+      "fausses_alarmes": 0
+    },
+    "champsSousObjectif": [],
+    "objectifExactitudeAtteint": true,
+    "objectifDetectionAtteint": false
+  }
+}
