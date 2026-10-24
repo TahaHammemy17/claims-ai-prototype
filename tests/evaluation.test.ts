@@ -1,5 +1,6 @@
 import { readFileSync } from 'fs';
 import { join } from 'path';
+import { chargerContratFichier } from '../src/contrat';
 import { LocalPdfExtractor } from '../src/extraction';
 import {
   CasAttendu,
@@ -85,6 +86,7 @@ describe('US-10 : évaluation réelle de l\'extracteur à règles sur le jeu de 
       lireFichier: (f) => readFileSync(join(SAMPLES, f)),
       extracteur: new LocalPdfExtractor(),
       garantiePct: 150,
+      contrat: chargerContratFichier(join(SAMPLES, 'contrat-fictif.json')),
     });
   });
 
@@ -109,17 +111,15 @@ describe('US-10 : évaluation réelle de l\'extracteur à règles sur le jeu de 
     expect(evaluation.synthese.inventees).toBe(0);
   });
 
-  it('détecte les anomalies TC-05, TC-06, TC-07 et TC-08, sans fausse alarme', () => {
+  it('détecte les anomalies TC-05, TC-06, TC-07, TC-08 et TC-09, sans fausse alarme', () => {
     const detectees = evaluation.alertes.filter((a) => a.detectees.length > 0).map((a) => a.cas);
-    expect(detectees).toEqual(['TC-05', 'TC-06', 'TC-07', 'TC-08']);
+    expect(detectees).toEqual(['TC-05', 'TC-06', 'TC-07', 'TC-08', 'TC-09']);
     expect(evaluation.synthese.alertes.fausses_alarmes).toBe(0);
   });
 
-  it('limite connue : TC-09 (bénéficiaire hors contrat) n\'est pas détecté, la règle RG-04 relève d\'US-08', () => {
-    const tc09 = evaluation.alertes.find((a) => a.cas === 'TC-09')!;
-    expect(tc09.manquees).toEqual(['BENEFICIAIRE_INCONNU']);
-    expect(evaluation.synthese.alertes).toMatchObject({ attendues: 5, detectees: 4 });
-    expect(evaluation.synthese.objectifDetectionAtteint).toBe(false);
+  it('objectif de la charte atteint : 5 anomalies sur 5 détectées, dont TC-09 grâce à RG-04 (US-08)', () => {
+    expect(evaluation.synthese.alertes).toMatchObject({ attendues: 5, detectees: 5, taux: 1 });
+    expect(evaluation.synthese.objectifDetectionAtteint).toBe(true);
   });
 
   it('le rapport contient le tableau comparatif, les écarts et les limites, sans date de génération', () => {

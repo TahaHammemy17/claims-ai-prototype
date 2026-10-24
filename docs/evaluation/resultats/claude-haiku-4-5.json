@@ -502,10 +502,10 @@
       "attendues": [
         "BENEFICIAIRE_INCONNU"
       ],
-      "detectees": [],
-      "manquees": [
+      "detectees": [
         "BENEFICIAIRE_INCONNU"
       ],
+      "manquees": [],
       "fausses": []
     },
     {
@@ -581,12 +581,12 @@
     "inventees": 0,
     "alertes": {
       "attendues": 5,
-      "detectees": 4,
-      "taux": 0.8,
+      "detectees": 5,
+      "taux": 1,
       "fausses_alarmes": 0
     },
     "champsSousObjectif": [],
     "objectifExactitudeAtteint": true,
-    "objectifDetectionAtteint": false
+    "objectifDetectionAtteint": true
   }
 }

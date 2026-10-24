@@ -1,3 +1,4 @@
+import { Contrat } from '../contrat';
 import { DossierRegistry } from '../controls/doublon';
 import { BedrockExtractor, DocumentExtractor, FieldName } from '../extraction';
 import { construireDossier } from '../validation/dossier';
@@ -146,8 +147,9 @@ export async function evaluer(params: {
   lireFichier: (nom: string) => Buffer;
   extracteur: DocumentExtractor;
   garantiePct: number;
+  contrat?: Contrat;
 }): Promise<Evaluation> {
-  const { nom, cas, lireFichier, extracteur, garantiePct } = params;
+  const { nom, cas, lireFichier, extracteur, garantiePct, contrat } = params;
   const registre = new DossierRegistry();
   const champs: ResultatChamp[] = [];
   const alertes: ResultatAlertes[] = [];
@@ -160,6 +162,7 @@ export async function evaluer(params: {
       garantiePct,
       registre,
       extracteur,
+      contrat,
     });
     for (const champ of CHAMPS_EVALUES) {
       const attendu = valeur(c.extraction?.[champ]);

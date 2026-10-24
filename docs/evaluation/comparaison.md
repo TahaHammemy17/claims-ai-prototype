@@ -7,29 +7,33 @@ Objectifs de la charte : exactitude ≥ 90 % par champ, détection des anomalies
 
 | Extracteur | Valeurs attendues lues juste | Valeurs fausses (dont inventées) | Valeurs manquantes | Exactitude globale | Anomalies détectées | Fausses alarmes | Appels | Tokens (entrée / sortie) |
 |---|---|---|---|---|---|---|---|---|
-| Claude Haiku 4.5 | 31/32 (96.9 %) | 0 (dont 0) | 1 | 98.3 % | 4/5 (80 %) | 0 | 10 | 5574 / 1214 |
-| Nova Lite | 32/32 (100 %) | 0 (dont 0) | 0 | 100 % | 4/5 (80 %) | 0 | 10 | 5129 / 1166 |
-| Regles | 29/32 (90.6 %) | 0 (dont 0) | 3 | 95 % | 4/5 (80 %) | 0 | — | — |
+| Claude Haiku 4.5 | 31/32 (96.9 %) | 0 (dont 0) | 1 | 98.3 % | 5/5 (100 %) | 0 | 10 | 5574 / 1214 |
+| Nova Lite run 2 | 31/32 (96.9 %) | 0 (dont 0) | 1 | 98.3 % | 5/5 (100 %) | 0 | 10 | 5574 / 1214 |
+| Nova Lite run 3 | 31/32 (96.9 %) | 0 (dont 0) | 1 | 98.3 % | 5/5 (100 %) | 0 | 10 | 5574 / 1214 |
+| Nova Lite | 31/32 (96.9 %) | 0 (dont 0) | 1 | 98.3 % | 5/5 (100 %) | 0 | 10 | 5129 / 1145 |
+| Regles | 29/32 (90.6 %) | 0 (dont 0) | 3 | 95 % | 5/5 (100 %) | 0 | — | — |
 
 *L'exactitude globale compte aussi les cases « rien à trouver », faciles à réussir : le taux de lecture des valeurs réellement présentes est plus exigeant.*
 *Une valeur fausse est plus grave qu'une valeur manquante : une valeur manquante se voit dans la file de validation, une valeur fausse peut passer inaperçue.*
 
 ## Exactitude par champ
 
-| Champ | Claude Haiku 4.5 | Nova Lite | Regles |
-|---|---|---|---|
-| beneficiaire | 100 % | 100 % | 90 % |
-| date_soins | 90 % | 100 % | 90 % |
-| montant_facture | 100 % | 100 % | 90 % |
-| base_remboursement | 100 % | 100 % | 100 % |
-| taux_RO | 100 % | 100 % | 100 % |
-| montant_RO | 100 % | 100 % | 100 % |
+| Champ | Claude Haiku 4.5 | Nova Lite run 2 | Nova Lite run 3 | Nova Lite | Regles |
+|---|---|---|---|---|---|
+| beneficiaire | 100 % | 100 % | 100 % | 100 % | 90 % |
+| date_soins | 90 % | 90 % | 90 % | 90 % | 90 % |
+| montant_facture | 100 % | 100 % | 100 % | 100 % | 90 % |
+| base_remboursement | 100 % | 100 % | 100 % | 100 % | 100 % |
+| taux_RO | 100 % | 100 % | 100 % | 100 % | 100 % |
+| montant_RO | 100 % | 100 % | 100 % | 100 % | 100 % |
 
 ## Objectifs de la charte
 
-- **Claude Haiku 4.5** : exactitude par champ atteint · détection des anomalies non atteint
-- **Nova Lite** : exactitude par champ atteint · détection des anomalies non atteint
-- **Regles** : exactitude par champ atteint · détection des anomalies non atteint
+- **Claude Haiku 4.5** : exactitude par champ atteint · détection des anomalies atteint
+- **Nova Lite run 2** : exactitude par champ atteint · détection des anomalies atteint
+- **Nova Lite run 3** : exactitude par champ atteint · détection des anomalies atteint
+- **Nova Lite** : exactitude par champ atteint · détection des anomalies atteint
+- **Regles** : exactitude par champ atteint · détection des anomalies atteint
 
 ## Détail des écarts
 
@@ -39,11 +43,27 @@ Objectifs de la charte : exactitude ≥ 90 % par champ, détection des anomalies
 |---|---|---|---|---|
 | TC-02 | date_soins | 2026-04-02 | — | manquant |
 
-- Anomalie non détectée : TC-09 → BENEFICIAIRE_INCONNU
+
+### Nova Lite run 2
+
+| Dossier | Champ | Attendu | Obtenu | Verdict |
+|---|---|---|---|---|
+| TC-02 | date_soins | 2026-04-02 | — | manquant |
+
+
+### Nova Lite run 3
+
+| Dossier | Champ | Attendu | Obtenu | Verdict |
+|---|---|---|---|---|
+| TC-02 | date_soins | 2026-04-02 | — | manquant |
+
 
 ### Nova Lite
 
-- Anomalie non détectée : TC-09 → BENEFICIAIRE_INCONNU
+| Dossier | Champ | Attendu | Obtenu | Verdict |
+|---|---|---|---|---|
+| TC-02 | date_soins | 2026-04-02 | — | manquant |
+
 
 ### Regles
 
@@ -53,7 +73,6 @@ Objectifs de la charte : exactitude ≥ 90 % par champ, détection des anomalies
 | TC-02 | date_soins | 2026-04-02 | — | manquant |
 | TC-02 | montant_facture | 650 | — | manquant |
 
-- Anomalie non détectée : TC-09 → BENEFICIAIRE_INCONNU
 
 ## Limites de cette évaluation
 

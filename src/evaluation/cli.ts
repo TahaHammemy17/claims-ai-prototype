@@ -1,5 +1,6 @@
 import { mkdirSync, readFileSync, writeFileSync } from 'fs';
 import { join } from 'path';
+import { chargerContratFichier } from '../contrat';
 import { creerExtracteur } from '../extraction';
 import { CasAttendu, evaluer } from './evaluer';
 
@@ -26,6 +27,7 @@ async function main() {
     lireFichier: (f) => readFileSync(join(SAMPLES, f)),
     extracteur,
     garantiePct: 150,
+    contrat: chargerContratFichier(join(SAMPLES, 'contrat-fictif.json')),
   });
 
   mkdirSync(SORTIE, { recursive: true });

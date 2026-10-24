@@ -1,4 +1,5 @@
 import { DossierValues } from '../dossier';
+import { normaliserNom } from './nom';
 
 /**
  * RG-02 : un dossier identique à un dossier déjà déposé est signalé comme doublon.
@@ -20,16 +21,6 @@ export interface DoublonResult {
   alerts: DoublonAlert[];
 }
 
-/** "  Léa   BERNARD " -> "lea bernard" */
-function normaliseNom(nom: string): string {
-  return nom
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '')
-    .toLowerCase()
-    .replace(/\s+/g, ' ')
-    .trim();
-}
-
 /** Clé de comparaison, ou null si une des trois informations manque. */
 export function cleDoublon(values: DossierValues): string | null {
   const { beneficiaire, date_soins, montant_facture } = values;
@@ -37,7 +28,7 @@ export function cleDoublon(values: DossierValues): string | null {
     return null;
   }
   const centimes = Math.round(montant_facture * 100);
-  return `${normaliseNom(beneficiaire)}|${date_soins}|${centimes}`;
+  return `${normaliserNom(beneficiaire)}|${date_soins}|${centimes}`;
 }
 
 /** Mémoire des dossiers déjà déposés (en mémoire pour ce prototype). */

@@ -56,8 +56,8 @@
       "cas": "TC-02",
       "champ": "date_soins",
       "attendu": "2026-04-02",
-      "obtenu": "2026-04-02",
-      "verdict": "correct"
+      "obtenu": null,
+      "verdict": "manquant"
     },
     {
       "cas": "TC-02",
@@ -502,10 +502,10 @@
       "attendues": [
         "BENEFICIAIRE_INCONNU"
       ],
-      "detectees": [],
-      "manquees": [
+      "detectees": [
         "BENEFICIAIRE_INCONNU"
       ],
+      "manquees": [],
       "fausses": []
     },
     {
@@ -519,7 +519,7 @@
   "consommation": {
     "appels": 10,
     "inputTokens": 5129,
-    "outputTokens": 1166
+    "outputTokens": 1145
   },
   "synthese": {
     "parChamp": {
@@ -531,11 +531,11 @@
         "exactitude": 1
       },
       "date_soins": {
-        "correct": 8,
-        "manquant": 0,
+        "correct": 7,
+        "manquant": 1,
         "faux": 0,
         "absence_correcte": 2,
-        "exactitude": 1
+        "exactitude": 0.9
       },
       "montant_facture": {
         "correct": 7,
@@ -567,26 +567,26 @@
       }
     },
     "global": {
-      "correct": 32,
-      "manquant": 0,
+      "correct": 31,
+      "manquant": 1,
       "faux": 0,
       "absence_correcte": 28,
-      "exactitude": 1
+      "exactitude": 0.9833333333333333
     },
     "lecture": {
       "attendues": 32,
-      "justes": 32,
-      "taux": 1
+      "justes": 31,
+      "taux": 0.96875
     },
     "inventees": 0,
     "alertes": {
       "attendues": 5,
-      "detectees": 4,
-      "taux": 0.8,
+      "detectees": 5,
+      "taux": 1,
       "fausses_alarmes": 0
     },
     "champsSousObjectif": [],
     "objectifExactitudeAtteint": true,
-    "objectifDetectionAtteint": false
+    "objectifDetectionAtteint": true
   }
 }

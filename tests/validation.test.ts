@@ -1,11 +1,13 @@
 import { readFileSync } from 'fs';
 import { join } from 'path';
+import { chargerContratFichier } from '../src/contrat';
 import { DossierRegistry } from '../src/controls/doublon';
 import { construireDossier } from '../src/validation/dossier';
 import { FileDeValidation } from '../src/validation/file';
 
 const SAMPLES = join(__dirname, '..', 'samples');
 const cas: any[] = JSON.parse(readFileSync(join(SAMPLES, 'resultats-attendus.json'), 'utf-8'));
+const CONTRAT = chargerContratFichier(join(SAMPLES, 'contrat-fictif.json'));
 const HORLOGE_FIXE = () => new Date('2026-10-20T10:30:00.000Z');
 
 /** Construit les dossiers du jeu de test, dans l'ordre, avec un registre partagé. */
@@ -20,6 +22,7 @@ async function toutesLesFiles() {
         dateDepot: c.date_depot,
         garantiePct: 150,
         registre,
+        contrat: CONTRAT,
       }),
     );
   }
@@ -80,8 +83,9 @@ describe('US-09 : assemblage des contrôles dans le dossier', () => {
     expect(file.obtenir('TC-01').champsEssentielsManquants).toEqual([]);
   });
 
-  it('limite connue : TC-09 (bénéficiaire hors contrat) n\'a pas encore d\'alerte, RG-04 relève d\'US-08', () => {
-    expect(codes(file, 'TC-09')).toEqual([]);
+  it('TC-09 : bénéficiaire absent du contrat (RG-04)', () => {
+    expect(codes(file, 'TC-09')).toEqual(['BENEFICIAIRE_INCONNU']);
+    expect(file.obtenir('TC-09').alertes[0].regle).toBe('RG-04');
   });
 });
 

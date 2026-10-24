@@ -1,5 +1,6 @@
 import { readFileSync } from 'fs';
 import { join } from 'path';
+import { chargerContratFichier } from './contrat';
 import { DossierRegistry } from './controls/doublon';
 import { construireDossier } from './validation/dossier';
 import { FileDeValidation } from './validation/file';
@@ -9,6 +10,7 @@ const GARANTIE = 150; // contrat fictif : consultation de spécialiste à 150 % 
 
 async function main() {
   const cas: any[] = JSON.parse(readFileSync(join(SAMPLES, 'resultats-attendus.json'), 'utf-8'));
+  const contrat = chargerContratFichier(join(SAMPLES, 'contrat-fictif.json'));
   const registre = new DossierRegistry();
   const file = new FileDeValidation();
 
@@ -20,6 +22,7 @@ async function main() {
         dateDepot: c.date_depot,
         garantiePct: GARANTIE,
         registre,
+        contrat,
       }),
     );
   }

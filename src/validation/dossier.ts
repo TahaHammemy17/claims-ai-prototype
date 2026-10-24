@@ -3,6 +3,8 @@ import { DossierValues, mergeExtractions } from '../dossier';
 import { processDocument } from '../pipeline';
 import { controlerPlafond, PlafondCalcul } from '../controls/plafond';
 import { controlerDates } from '../controls/dates';
+import { controlerBeneficiaire } from '../controls/beneficiaire';
+import { Contrat } from '../contrat';
 import { DossierRegistry } from '../controls/doublon';
 import { Alerte, alerte } from './alertes';
 
@@ -49,8 +51,10 @@ export async function construireDossier(params: {
   registre: DossierRegistry;
   /** Extracteur à utiliser (règles par défaut). */
   extracteur?: DocumentExtractor;
+  /** Contrat de la complémentaire : sans lui, le bénéficiaire n'est pas contrôlé. */
+  contrat?: Contrat;
 }): Promise<DossierAValider> {
-  const { reference, fichiers, dateDepot, garantiePct, registre, extracteur } = params;
+  const { reference, fichiers, dateDepot, garantiePct, registre, extracteur, contrat } = params;
   const alertes: Alerte[] = [];
   const documents: DossierAValider['documents'] = [];
   const extractions = [];
@@ -72,6 +76,11 @@ export async function construireDossier(params: {
   if (aExtrait) {
     const dates = controlerDates({ date_soins: champs.date_soins as string | null, date_depot: dateDepot });
     for (const code of dates.alerts) alertes.push(alerte(code));
+
+    if (contrat) {
+      const beneficiaire = typeof champs.beneficiaire === 'string' ? champs.beneficiaire : null;
+      for (const code of controlerBeneficiaire(beneficiaire, contrat).alerts) alertes.push(alerte(code));
+    }
 
     const doublon = registre.enregistrer(reference, champs);
     for (const code of doublon.alerts) alertes.push(alerte(code, `dossier ${doublon.duplicateOf}`));

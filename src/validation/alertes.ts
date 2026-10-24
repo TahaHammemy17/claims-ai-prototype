@@ -16,6 +16,7 @@ const CATALOGUE: Record<string, { libelle: string; regle: string }> = {
   DOUBLON: { libelle: 'Doublon possible d\'un dossier déjà déposé', regle: 'RG-02' },
   DATE_INCOHERENTE: { libelle: 'Date des soins postérieure à la date de dépôt', regle: 'RG-03' },
   DATE_INVALIDE: { libelle: 'Date invalide ou illisible', regle: 'RG-03' },
+  BENEFICIAIRE_INCONNU: { libelle: 'Bénéficiaire absent du contrat', regle: 'RG-04' },
 };
 
 /** Construit une alerte lisible ; `precision` complète le libellé (ex. référence d'un doublon). */
