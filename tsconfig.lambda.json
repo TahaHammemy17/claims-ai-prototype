@@ -1,0 +1,6 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": { "rootDir": "src", "outDir": "dist-lambda" },
+  "include": ["src/**/*"],
+  "exclude": ["src/cli.ts", "src/fileCli.ts", "src/evaluation"]
+}
