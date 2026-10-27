@@ -111,6 +111,8 @@ npx ts-node src/evaluation/comparer.ts                # rapport comparatif
 
 Le suivi détaillé des sprints (backlog, tableau, burndown) est tenu dans Jira, accès sur demande.
 
+**Déploiement AWS :** [démonstration Lambda et S3](docs/deploiement.md)
+
 ## Limites connues
 
 - Données fictives et jeu de test minuscule : les résultats ne se généralisent pas à de vrais documents.
