@@ -105,7 +105,7 @@ npx ts-node src/evaluation/comparer.ts                # rapport comparatif
 [ADR-003 spike Bedrock](docs/adr/ADR-003-bedrock.md) ·
 [ADR-004 extracteur Bedrock](docs/adr/ADR-004-extracteur-bedrock.md)
 
-**Pilotage :** [rétrospective sprint 1](docs/retrospectives/sprint-1.md) · [rétrospective sprint 2](docs/retrospectives/sprint-2.md)
+**Pilotage :** [rétrospective sprint 1](docs/retrospectives/sprint-1.md) · [rétrospective sprint 2](docs/retrospectives/sprint-2.md) · [rétrospective sprint 3](docs/retrospectives/sprint-3.md)
 
 **Évaluation :** [comparaison](docs/evaluation/comparaison.md) · [conclusions](docs/evaluation/conclusions.md)
 
